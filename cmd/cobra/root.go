@@ -1,7 +1,6 @@
 package cobra
 
 import (
-	"fmt"
 	"path/filepath"
 
 	homedir "github.com/mitchellh/go-homedir"
@@ -18,7 +17,6 @@ var RootCmd = &cobra.Command{
 var encodingKey string
 
 func init() {
-	fmt.Println("enc key", encodingKey)
 	RootCmd.PersistentFlags().StringVarP(&encodingKey, "key", "k", "", "Your encryption key passed used when encoding and decoding secrets")
 	RootCmd.MarkFlagRequired("key")
 }
